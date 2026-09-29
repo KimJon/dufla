@@ -8,24 +8,40 @@
   <style>
     .page-header { background-image: url('DSC09024.JPG'); }
     
+    .proposal-section { margin-bottom: 60px; }
+    .proposal-section h3 { color: var(--maasai-yellow); font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+    .proposal-section p, .proposal-section ul { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
+    .proposal-section ul { list-style: none; padding-left: 0; }
+    .proposal-section ul li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+    .proposal-section ul li::before { content: '✦'; position: absolute; left: 0; color: var(--maasai-red); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+    .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 40px; }
+    .card h4 { color: var(--maasai-red); font-size: 1.2rem; margin-bottom: 15px; }
+
+    .budget-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1.1rem; }
+    .budget-table th, .budget-table td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .budget-table th { color: var(--maasai-yellow); text-transform: uppercase; letter-spacing: 1px; }
+    .budget-table tr:last-child td { border-bottom: none; font-weight: 800; color: var(--white); font-size: 1.3rem; }
+
+    .marketing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .marketing-col { background: rgba(14, 41, 84, 0.3); padding: 30px; border-top: 3px solid var(--maasai-red); }
+    .marketing-col h4 { font-size: 1.1rem; color: #fff; margin-bottom: 15px; }
+
     .tiers-container {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px; margin-top: 80px;
+      gap: 30px; margin-top: 60px;
     }
     .tier-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 50px 30px; text-align: center;
-      transition: var(--transition);
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+      padding: 50px 30px; text-align: center; transition: var(--transition);
       position: relative; overflow: hidden;
     }
     .tier-card:hover {
       background: rgba(255,255,255,0.08); transform: translateY(-10px);
       border-color: var(--maasai-yellow);
     }
-    .tier-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    }
+    .tier-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
     .tier-platinum::before { background: #E5E4E2; }
     .tier-gold::before { background: var(--maasai-yellow); }
     .tier-silver::before { background: #C0C0C0; }
@@ -35,9 +51,7 @@
     .tier-price { font-family: var(--font-body); font-size: 1.5rem; color: var(--maasai-yellow); font-weight: 800; margin-bottom: 30px; }
     .tier-benefits { list-style: none; text-align: left; font-size: 0.9rem; color: #ccc; }
     .tier-benefits li { margin-bottom: 15px; padding-left: 25px; position: relative; }
-    .tier-benefits li::before {
-      content: '✦'; position: absolute; left: 0; color: var(--maasai-red);
-    }
+    .tier-benefits li::before { content: '✦'; position: absolute; left: 0; color: var(--maasai-red); }
 
     .contact-section {
       background: url('DSC09030.JPG') center/cover fixed;
@@ -49,6 +63,10 @@
     .contact-card { background: rgba(0,0,0,0.5); padding: 40px; border: 1px solid var(--maasai-red); }
     .contact-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--maasai-yellow); }
     .contact-card p { font-size: 1.1rem; margin-bottom: 10px; }
+
+    @media (max-width: 900px) {
+      .grid-2, .marketing-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -85,9 +103,143 @@
 
   <section class="section">
     <div class="container">
-      <div style="text-align: center;">
+      
+      <!-- Executive Summary -->
+      <div class="proposal-section">
+        <h3>Executive Summary</h3>
+        <p>The Dufla Diligon 10 Years Anniversary Unity Concert is a landmark celebration of a decade of music, creativity and community connection. Scheduled for Saturday, 31st October 2026 at Kenyatta Stadium, Maralal, Samburu County, with free entry for everyone.</p>
+        <p>More than an entertainment event, the concert is designed as a platform for peace, unity, cultural appreciation and youth empowerment, bringing together the Turkana and Samburu communities and the general public in a shared space for positive interaction and celebration.</p>
+      </div>
+
+      <!-- Why Free Entry -->
+      <div class="proposal-section">
+        <h3>Why Free Entry? Leaving A Positive Footprint</h3>
+        <p>We do not want the cost of a ticket to determine who gets to participate in a peace and unity initiative. Free Entry Means:</p>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Accessibility & Inclusion</h4>
+            <p>Everyone has an opportunity to attend. No community or economic group is left behind.</p>
+          </div>
+          <div class="card">
+            <h4>Interaction & Impact</h4>
+            <p>Greater opportunity for Turkana, Samburu and other communities to mingle, ensuring the peace message reaches a wider audience.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Benefits -->
+      <div class="proposal-section">
+        <h3>Key Benefits To Sponsors</h3>
+        <ul>
+          <li><strong>BRAND VISIBILITY</strong> - Prominent exposure through event branding, promotional materials, social media, radio, digital platforms and on-ground activations.</li>
+          <li><strong>AUDIENCE ENGAGEMENT</strong> - Direct interaction with attendees through branded activations, product displays, sampling, competitions and demonstrations.</li>
+          <li><strong>CSR & COMMUNITY IMPACT</strong> - Align your brand with a meaningful initiative promoting peace, unity, cultural appreciation and positive community relations.</li>
+          <li><strong>AUDIENCE REACH</strong> - Connect with a diverse audience comprising youth, families, creatives, entrepreneurs, community leaders and residents from Samburu and surrounding regions.</li>
+          <li><strong>YOUTH & TALENT EMPOWERMENT</strong> - Support emerging artists by providing a platform to showcase their talent alongside established performers.</li>
+          <li><strong>CULTURAL CONNECTION</strong> - Associate your brand with a celebration of the rich cultural heritage and diversity of the Samburu and Turkana communities.</li>
+        </ul>
+      </div>
+
+      <!-- Marketing & Publicity -->
+      <div class="proposal-section">
+        <h3>Marketing & Publicity Strategy</h3>
+        <div class="marketing-grid">
+          <div class="marketing-col">
+            <h4>Before The Event</h4>
+            <ul>
+              <li>Artist announcements</li>
+              <li>Countdown campaign</li>
+              <li>Social media content</li>
+              <li>Radio promotion</li>
+              <li>Media interviews</li>
+              <li>Billboards, Posters & banners</li>
+              <li>Peace Walk promotion</li>
+            </ul>
+          </div>
+          <div class="marketing-col">
+            <h4>During The Event</h4>
+            <ul>
+              <li>Live social media content</li>
+              <li>Artist content</li>
+              <li>Brand activations</li>
+              <li>Photography & Videography</li>
+              <li>Media coverage</li>
+              <li>Peace Walk documentation</li>
+            </ul>
+          </div>
+          <div class="marketing-col">
+            <h4>After The Event</h4>
+            <ul>
+              <li>Event highlights</li>
+              <li>Sponsor appreciation</li>
+              <li>Photo and video content</li>
+              <li>Community impact stories</li>
+              <li>Social media recap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proposed Budget -->
+      <div class="proposal-section">
+        <h3>Proposed Budget</h3>
+        <div class="card" style="padding: 20px;">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Details</th>
+                <th>Cost (KES)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Set Up</td>
+                <td>Sound, Stage, Lights, Generator</td>
+                <td>450,000</td>
+              </tr>
+              <tr>
+                <td>Tents</td>
+                <td>Dorm & VIP Area</td>
+                <td>350,000</td>
+              </tr>
+              <tr>
+                <td>Performers</td>
+                <td>DJs, MCs, Artists Remuneration</td>
+                <td>550,000</td>
+              </tr>
+              <tr>
+                <td>Publicity</td>
+                <td>Advertisement and merchandise</td>
+                <td>200,000</td>
+              </tr>
+              <tr>
+                <td>Logistics</td>
+                <td>Transport & Accommodation (Artists/Crew)</td>
+                <td>160,000</td>
+              </tr>
+              <tr>
+                <td>Security</td>
+                <td>Police and Bouncers protocol</td>
+                <td>90,000</td>
+              </tr>
+              <tr>
+                <td>Contingency</td>
+                <td>-</td>
+                <td>180,000</td>
+              </tr>
+              <tr>
+                <td><strong>TOTAL</strong></td>
+                <td></td>
+                <td><strong>1,980,000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 100px;">
         <h2>Sponsorship <span class="text-red">Packages</span></h2>
-        <p style="margin-top: 20px;">Support the 10 Years Anniversary Unity Concert. Leave a positive footprint.</p>
       </div>
       
       <div class="tiers-container">
@@ -140,6 +292,13 @@
           </ul>
         </div>
       </div>
+      
+      <!-- Conclusion -->
+      <div class="proposal-section" style="margin-top: 80px; text-align: center;">
+        <h3>Conclusion</h3>
+        <p style="max-width: 800px; margin: 0 auto;">Your support will help create a platform where young people are empowered, talent is celebrated, culture is respected, and communities are brought closer together to create lasting memories.</p>
+      </div>
+
     </div>
   </section>
 
