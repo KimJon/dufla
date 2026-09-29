@@ -1,4 +1,71 @@
-﻿<!DOCTYPE html>
+$nav = @"
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT DUFLA</a></li>
+      <li><a href="music-videos.html">MUSIC & VIDEOS</a></li>
+      <li><a href="events.html" class="active">NEWS & EVENTS</a></li>
+      <li><a href="10-years.html">10 YEARS</a></li>
+      <li><a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a></li>
+      <li><a href="book-dufla.html">BOOK DUFLA</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT DUFLA</a>
+    <a href="music-videos.html">MUSIC & VIDEOS</a>
+    <a href="events.html">NEWS & EVENTS</a>
+    <a href="10-years.html">10 YEARS</a>
+    <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
+    <a href="book-dufla.html">BOOK DUFLA</a>
+  </div>
+"@
+
+$footer = @"
+  <footer>
+    <div class="container">
+      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-bottom:40px;">
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dufla</a></li>
+          <li><a href="music-videos.html">Music & Videos</a></li>
+          <li><a href="events.html">News & Events</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="10-years.html">10 Years</a></li>
+          <li><a href="support-partnerships.html">Support & Partnerships</a></li>
+          <li><a href="book-dufla.html">Book Dufla</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
+          <li><a href="https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk" target="_blank">TikTok</a></li>
+          <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1Dr2cRrCRw/" target="_blank">Facebook</a></li>
+          <li><a href="https://youtube.com/@duflamusic?si=NporpgNPWeEd60oz" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p style="margin-top:10px;">Powered by <strong>Extra Levels Marketing</strong></p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
+    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
+    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
+  </script>
+</body>
+</html>
+"@
+
+# ─── COMBINED NEWS & EVENTS PAGE ───
+$page = @"
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -29,7 +96,7 @@
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* â”€â”€ EVENTS â”€â”€ */
+    /* ── EVENTS ── */
     .upcoming-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -65,7 +132,7 @@
     .past-info strong { font-size: 1rem; color: var(--white); }
     .past-info span { font-size: 0.8rem; color: #666; display: block; margin-top: 3px; }
 
-    /* â”€â”€ NEWS â”€â”€ */
+    /* ── NEWS ── */
     .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
     .news-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.02); border-bottom: 3px solid transparent; transition: all 0.3s; }
     .news-card:hover { transform: translateY(-8px); border-bottom-color: var(--maasai-red); background: rgba(255,255,255,0.05); }
@@ -86,28 +153,7 @@
   </style>
 </head>
 <body>
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="about.html">ABOUT DUFLA</a></li>
-      <li><a href="music-videos.html">MUSIC & VIDEOS</a></li>
-      <li><a href="events.html" class="active">NEWS & EVENTS</a></li>
-      <li><a href="10-years.html">10 YEARS</a></li>
-      <li><a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a></li>
-      <li><a href="book-dufla.html">BOOK DUFLA</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT DUFLA</a>
-    <a href="music-videos.html">MUSIC & VIDEOS</a>
-    <a href="events.html">NEWS & EVENTS</a>
-    <a href="10-years.html">10 YEARS</a>
-    <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
-    <a href="book-dufla.html">BOOK DUFLA</a>
-  </div>
+$nav
 
   <header class="page-header">
     <div class="container">
@@ -125,7 +171,7 @@
       <button class="tab-btn" onclick="switchTab('news', this)">NEWS</button>
     </div>
 
-    <!-- â”€â”€ EVENTS TAB â”€â”€ -->
+    <!-- ── EVENTS TAB ── -->
     <div id="tab-events" class="tab-panel active">
 
       <h2 style="color:var(--maasai-yellow); margin-bottom:5px;">UPCOMING</h2>
@@ -165,7 +211,7 @@
           <div class="ev-body">
             <p class="ev-sub">Maralal, Samburu County</p>
             <p class="ev-desc">A landmark celebration of a decade of music, creativity and community connection. Artists, communities and the public united for a full day of performance, culture, peace and unity. Peace Walk from Yare to the main venue.</p>
-            <p style="color:#aaa; font-size:0.85rem; margin-bottom:22px;"><strong style="color:#fff;">10:00 AM â€“ 6:00 PM</strong> &bull; Regional & National Artists &bull; Youth &bull; Emerging Artists</p>
+            <p style="color:#aaa; font-size:0.85rem; margin-bottom:22px;"><strong style="color:#fff;">10:00 AM – 6:00 PM</strong> &bull; Regional & National Artists &bull; Youth &bull; Emerging Artists</p>
             <div class="ev-actions">
               <a href="10-years.html" class="btn btn-outline" style="padding:11px 22px; font-size:0.8rem;">FULL EVENT DETAILS &rarr;</a>
               <a href="support-partnerships.html" class="btn btn-red" style="padding:11px 22px; font-size:0.8rem;">BECOME A PARTNER</a>
@@ -190,7 +236,7 @@
 
     </div>
 
-    <!-- â”€â”€ NEWS TAB â”€â”€ -->
+    <!-- ── NEWS TAB ── -->
     <div id="tab-news" class="tab-panel">
       <div class="news-grid">
 
@@ -229,7 +275,7 @@
           <div class="news-body">
             <div class="news-cat">MUSIC &bull; JUL 2025</div>
             <h2 class="news-title">Dufla Diligon and Iyanii Collaborate on "Donjo Maber"</h2>
-            <p class="news-excerpt">The smash hit collaboration that took Kenya by storm â€” a high-energy Afro-Dancehall anthem and one of the biggest tracks of 2025.</p>
+            <p class="news-excerpt">The smash hit collaboration that took Kenya by storm — a high-energy Afro-Dancehall anthem and one of the biggest tracks of 2025.</p>
             <a href="music-videos.html" class="news-read">WATCH VIDEO &rarr;</a>
           </div>
         </article>
@@ -238,7 +284,7 @@
           <div class="news-thumb"><img src="dufla2.JPG" alt="Rumours" loading="lazy"></div>
           <div class="news-body">
             <div class="news-cat">MUSIC &bull; OCT 2025</div>
-            <h2 class="news-title">Dufla Diligon Drops "Rumours" ft. Iyanii â€” A Bold Follow-Up</h2>
+            <h2 class="news-title">Dufla Diligon Drops "Rumours" ft. Iyanii — A Bold Follow-Up</h2>
             <p class="news-excerpt">A powerful anthem against gossip and fake news, released as the follow-up to Donjo Maber and cementing the Dufla x Iyanii partnership as a force in Kenyan music.</p>
             <a href="music-videos.html" class="news-read">WATCH VIDEO &rarr;</a>
           </div>
@@ -248,7 +294,7 @@
           <div class="news-thumb"><img src="dufla6.JPG" alt="Peace Walk" loading="lazy"></div>
           <div class="news-body">
             <div class="news-cat">COMMUNITY &bull; 2026</div>
-            <h2 class="news-title">Peace Walk Announced â€” Yare to Maralal</h2>
+            <h2 class="news-title">Peace Walk Announced — Yare to Maralal</h2>
             <p class="news-excerpt">Artists, elders, youth and community members will walk together from Yare to the main concert venue, symbolizing unity between the Turkana and Samburu communities.</p>
             <a href="10-years.html" class="news-read">READ MORE &rarr;</a>
           </div>
@@ -268,40 +314,37 @@
     }
   </script>
 
-  <footer>
-    <div class="container">
-      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
-      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
-      <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-bottom:40px;">
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Dufla</a></li>
-          <li><a href="music-videos.html">Music & Videos</a></li>
-          <li><a href="events.html">News & Events</a></li>
-        </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><a href="10-years.html">10 Years</a></li>
-          <li><a href="support-partnerships.html">Support & Partnerships</a></li>
-          <li><a href="book-dufla.html">Book Dufla</a></li>
-        </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
-          <li><a href="https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk" target="_blank">TikTok</a></li>
-          <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
-          <li><a href="https://www.facebook.com/share/1Dr2cRrCRw/" target="_blank">Facebook</a></li>
-          <li><a href="https://youtube.com/@duflamusic?si=NporpgNPWeEd60oz" target="_blank">YouTube</a></li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
-        <p style="margin-top:10px;">Powered by <strong>Extra Levels Marketing</strong></p>
-      </div>
-    </div>
-  </footer>
-  <script>
-    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
-    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
-    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
-  </script>
-</body>
-</html>
+$footer
+"@
+
+Set-Content events.html -Value $page -Encoding UTF8
+
+# Redirect news.html to events.html
+$redirect = @"
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0;url=events.html"><title>Redirecting...</title></head>
+<body><p>Redirecting to <a href="events.html">News & Events</a>...</p></body></html>
+"@
+Set-Content news.html -Value $redirect -Encoding UTF8
+
+# Update all nav across other pages — replace News nav item & merge
+$pages = @("index.html","about.html","music-videos.html","10-years.html","support-partnerships.html","book-dufla.html","gallery.html","404.html")
+foreach ($p in $pages) {
+    if (Test-Path $p) {
+        $c = Get-Content $p -Raw
+        # Update nav links — remove standalone NEWS, change to NEWS & EVENTS
+        $c = $c -replace '<li><a href="news\.html">NEWS</a></li>\s*', ''
+        $c = $c -replace '<li><a href="news\.html" [^>]*>NEWS</a></li>\s*', ''
+        $c = $c -replace '<a href="news\.html">NEWS</a>', '<a href="events.html">NEWS & EVENTS</a>'
+        # Mobile menu
+        $c = $c -replace '<a href="news\.html">NEWS</a>', '<a href="events.html">NEWS & EVENTS</a>'
+        # Footer links
+        $c = $c -replace '<li><a href="news\.html">News</a></li>', '<li><a href="events.html">News & Events</a></li>'
+        # Update EVENTS nav item label in those pages
+        $c = $c -replace '<li><a href="events\.html">EVENTS</a></li>', '<li><a href="events.html">NEWS & EVENTS</a></li>'
+        $c = $c -replace '<li><a href="events\.html" class="active">EVENTS</a></li>', '<li><a href="events.html" class="active">NEWS & EVENTS</a></li>'
+        # Footer
+        $c = $c -replace '<li><a href="events\.html">Events</a></li>', '<li><a href="events.html">News & Events</a></li>'
+        Set-Content $p -Value $c -Encoding UTF8
+    }
+}
