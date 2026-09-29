@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music & Videos | Dufla Diligon</title>
+  <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon.">
+  <link rel="stylesheet" href="style.css">
+  <style>.page-header { background-image: url('DSC09014.JPG'); }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+.video-card { background: var(--earth-dark); border: 1px solid rgba(255,255,255,0.05); transition: var(--transition); }
+.video-card:hover { transform: translateY(-5px); border-color: var(--maasai-yellow); }
+.video-thumb { width: 100%; aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; }
+.video-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: var(--transition); }
+.video-card:hover img { opacity: 1; transform: scale(1.05); }
+.play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: var(--maasai-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.play-btn::after { content: ''; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 15px solid #fff; margin-left: 5px; }
+.video-info { padding: 20px; text-align:left; }
+.video-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 5px; }
+.video-meta { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.filters { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom: 50px; }
+.filter-btn { background:transparent; border:1px solid var(--white); color:var(--white); padding:10px 20px; cursor:pointer; font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; transition:var(--transition); }
+.filter-btn:hover, .filter-btn.active { background:var(--maasai-red); border-color:var(--maasai-red); }</style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT DUFLA</a></li>
+      <li><a href="music-videos.html" class="active">MUSIC & VIDEOS</a></li>
+      <li><a href="events.html" >EVENTS</a></li>
+      <li><a href="10-years.html">10 YEARS</a></li>
+      <li><a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a></li>
+      <li><a href="news.html" >NEWS</a></li>
+      <li><a href="book-dufla.html" >BOOK DUFLA</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT DUFLA</a>
+    <a href="music-videos.html">MUSIC & VIDEOS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="10-years.html">10 YEARS</a>
+    <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
+    <a href="news.html">NEWS</a>
+    <a href="book-dufla.html">BOOK DUFLA</a>
+  </div>
+  <header class="page-header">
+    <div class="container">
+      <h1 class="cinematic-text">MUSIC & <span class="text-yellow">VIDEOS</span></h1>
+      <div class="bead-divider"><div class="bead yellow"></div><div class="bead blue"></div><div class="bead red"></div></div>
+      <p class="cinematic-text" style="font-size:1.2rem; color:var(--white); margin-top:10px;">Listen. Watch. Experience the journey.</p>
+    </div>
+  </header>
+  
+  <section class="section container" style="text-align:center;">
+    
+    <div style="margin-bottom: 80px;">
+      <h2 style="color:var(--maasai-red); margin-bottom: 30px;">FEATURED VIDEO</h2>
+      <div style="max-width: 1000px; margin: 0 auto; border: 2px solid var(--maasai-yellow); aspect-ratio: 16/9; position: relative;">
+        <img src="DSC09018.JPG" alt="Featured Video" style="width:100%; height:100%; object-fit:cover;">
+        <div class="play-btn" style="width:90px; height:90px;"></div>
+      </div>
+      <a href="https://youtube.com/@dufladiligontv" target="_blank" class="btn btn-red" style="margin-top:40px;">WATCH ON YOUTUBE</a>
+    </div>
+
+    <h2>DUFLA DILIGON TV</h2>
+    <div class="bead-divider" style="margin-top:20px; margin-bottom:40px;"><div class="bead blue"></div><div class="bead yellow"></div><div class="bead blue"></div></div>
+    
+    <div class="filters">
+      <button class="filter-btn active">ALL</button>
+      <button class="filter-btn">OFFICIAL VIDEOS</button>
+      <button class="filter-btn">LIVE PERFORMANCES</button>
+      <button class="filter-btn">COLLABORATIONS</button>
+      <button class="filter-btn">PLAYLISTS</button>
+    </div>
+
+    <div class="video-grid">
+      <!-- Video Card 1 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC08996.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Tempo (Official Video)</div>
+          <div class="video-meta">Official Music Video</div>
+        </div>
+      </div>
+      <!-- Video Card 2 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC08997.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Donjo Maber ft. Iyanii</div>
+          <div class="video-meta">Collaboration</div>
+        </div>
+      </div>
+      <!-- Video Card 3 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC09000.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Live in Maralal</div>
+          <div class="video-meta">Live Performance</div>
+        </div>
+      </div>
+      <!-- Video Card 4 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC09022.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">The Northern Journey Documentary</div>
+          <div class="video-meta">Behind The Scenes</div>
+        </div>
+      </div>
+      <!-- Video Card 5 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC09026.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Studio Sessions</div>
+          <div class="video-meta">Vlogs & Studio</div>
+        </div>
+      </div>
+      <!-- Video Card 6 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <img src="DSC09027.JPG" alt="Video Thumbnail">
+          <div class="play-btn"></div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Samburu Anthem</div>
+          <div class="video-meta">Official Music Video</div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="margin-top: 60px;">
+      <a href="https://youtube.com/@dufladiligontv" target="_blank" class="btn btn-outline">VIEW MORE ON YOUTUBE</a>
+    </div>
+
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      
+      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dufla</a></li>
+          <li><a href="music-videos.html">Music & Videos</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="10-years.html">10 Years</a></li>
+          <li><a href="support-partnerships.html">Support & Partnerships</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="book-dufla.html">Book Dufla</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
+          <li><a href="https://tiktok.com/@dufladiligon" target="_blank">TikTok</a></li>
+          <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/dufladiligon" target="_blank">Facebook</a></li>
+          <li><a href="https://youtube.com/@dufladiligontv" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p style="margin-top:10px;">Website by <strong>Haxor Management & Technology Consultants</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
+    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
+    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
+  </script>
+</body>
+</html>
