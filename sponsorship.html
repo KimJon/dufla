@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsorship & Partnership | Dufla Diligon</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header { background-image: url('DSC09024.JPG'); }
+    
+    .tiers-container {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px; margin-top: 80px;
+    }
+    .tier-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 50px 30px; text-align: center;
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .tier-card:hover {
+      background: rgba(255,255,255,0.08); transform: translateY(-10px);
+      border-color: var(--maasai-yellow);
+    }
+    .tier-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    }
+    .tier-platinum::before { background: #E5E4E2; }
+    .tier-gold::before { background: var(--maasai-yellow); }
+    .tier-silver::before { background: #C0C0C0; }
+    .tier-bronze::before { background: #CD7F32; }
+    
+    .tier-name { font-size: 2rem; margin-bottom: 10px; }
+    .tier-price { font-family: var(--font-body); font-size: 1.5rem; color: var(--maasai-yellow); font-weight: 800; margin-bottom: 30px; }
+    .tier-benefits { list-style: none; text-align: left; font-size: 0.9rem; color: #ccc; }
+    .tier-benefits li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+    .tier-benefits li::before {
+      content: '✦'; position: absolute; left: 0; color: var(--maasai-red);
+    }
+
+    .contact-section {
+      background: url('DSC09030.JPG') center/cover fixed;
+      padding: 120px 0; position: relative; text-align: center; margin-top: 80px;
+    }
+    .contact-section::before { content: ''; position: absolute; inset: 0; background: rgba(10,10,10,0.9); }
+    .contact-content { position: relative; z-index: 2; }
+    .contact-grid { display: flex; justify-content: center; gap: 60px; margin-top: 50px; flex-wrap: wrap; }
+    .contact-card { background: rgba(0,0,0,0.5); padding: 40px; border: 1px solid var(--maasai-red); }
+    .contact-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--maasai-yellow); }
+    .contact-card p { font-size: 1.1rem; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="concert.html">Unity Concert</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="sponsorship.html" class="active">Sponsorship</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="concert.html">Unity Concert</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="sponsorship.html">Sponsorship</a>
+  </div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="cinematic-text">Partnership & <span class="text-yellow">Sponsorship</span></h1>
+      <div class="bead-divider">
+        <div class="bead red"></div><div class="bead blue"></div><div class="bead yellow"></div>
+      </div>
+      <p class="cinematic-text">Align your brand with a historic event promoting peace, unity, and cultural celebration in Northern Kenya.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2>Sponsorship <span class="text-red">Packages</span></h2>
+        <p style="margin-top: 20px;">Support the 10 Years Anniversary Unity Concert. Leave a positive footprint.</p>
+      </div>
+      
+      <div class="tiers-container">
+        <!-- Platinum -->
+        <div class="tier-card tier-platinum">
+          <div class="tier-name" style="color: #E5E4E2;">Platinum</div>
+          <div class="tier-price">KES 2,000,000</div>
+          <ul class="tier-benefits">
+            <li>Title event sponsor</li>
+            <li>Venue & stage branding</li>
+            <li>Exclusive Site Visit by Dufla Diligon</li>
+            <li>Logo Placement on all materials</li>
+            <li>Vendor-ship space</li>
+            <li>Online engagement</li>
+            <li>Mentions & recognition by MC</li>
+          </ul>
+        </div>
+        <!-- Gold -->
+        <div class="tier-card tier-gold">
+          <div class="tier-name" style="color: var(--maasai-yellow);">Gold</div>
+          <div class="tier-price">KES 1,200,000</div>
+          <ul class="tier-benefits">
+            <li>Venue & stage branding</li>
+            <li>Vendor-ship space</li>
+            <li>Logo Placement on promotional materials</li>
+            <li>Online engagement</li>
+            <li>Mentions & recognition by MC</li>
+          </ul>
+        </div>
+        <!-- Silver -->
+        <div class="tier-card tier-silver">
+          <div class="tier-name" style="color: #C0C0C0;">Silver</div>
+          <div class="tier-price">KES 600,000</div>
+          <ul class="tier-benefits">
+            <li>Venue & stage branding</li>
+            <li>Vendor-ship space</li>
+            <li>Logo Placement on promotional materials</li>
+            <li>Online engagement</li>
+            <li>Mentions & recognition by MC</li>
+          </ul>
+        </div>
+        <!-- Bronze -->
+        <div class="tier-card tier-bronze">
+          <div class="tier-name" style="color: #CD7F32;">Bronze</div>
+          <div class="tier-price">KES 300,000</div>
+          <ul class="tier-benefits">
+            <li>Vendor-ship space</li>
+            <li>Online engagement</li>
+            <li>Mentions & recognition by MC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-content">
+      <h2>Let's <span class="text-red">Connect</span></h2>
+      <div class="bead-divider">
+        <div class="bead yellow"></div><div class="bead red"></div><div class="bead blue"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Isaac Koila</h3>
+          <p style="font-size: 0.9rem; color: #888; margin-bottom:15px; text-transform:uppercase; letter-spacing:2px;">Project Lead</p>
+          <p>+254 799 304 205</p>
+          <p><a href="mailto:koilaisaac@gmail.com" class="text-yellow">koilaisaac@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Boniface Waturu</h3>
+          <p style="font-size: 0.9rem; color: #888; margin-bottom:15px; text-transform:uppercase; letter-spacing:2px;">CEO, Extra Levels Marketing</p>
+          <p>+254 792 465 156</p>
+          <p><a href="mailto:extralevelsmarketing@gmail.com" class="text-yellow">extralevelsmarketing@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="concert.html">Concert</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="sponsorship.html">Sponsorship</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dufla Diligon. All rights reserved.</p>
+        <p style="margin-top:10px;">Powered by <strong>Extra Levels Marketing</strong> | dufladiligon.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
+    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
+    h.addEventListener('click', () => { m.classList.toggle('open'); });
+  </script>
+</body>
+</html>

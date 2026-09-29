@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity Concert | Dufla Diligon</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header { background-image: url('DSC09018.JPG'); }
+    
+    .event-details {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px; margin: -80px auto 100px; position: relative; z-index: 10;
+    }
+    .detail-card {
+      background: var(--maasai-blue); padding: 40px 30px; text-align: center;
+      border-bottom: 4px solid var(--maasai-yellow);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .detail-card h3 { color: var(--maasai-yellow); font-size: 1rem; margin-bottom: 10px; }
+    .detail-card p { font-size: 1.5rem; font-family: var(--font-heading); font-weight: 700; color: #fff; }
+    
+    .charity-section { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; margin-bottom: 120px; }
+    .charity-poster { flex: 1; min-width: 300px; }
+    .charity-poster img { border: 2px solid var(--maasai-red); width: 100%; }
+    .charity-text { flex: 1; min-width: 300px; }
+    
+    .lineup-section { background: var(--earth-dark); padding: 100px 0; border-top: 1px solid #222; }
+    .artist-list { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+    .artist-name { 
+      background: rgba(255,255,255,0.05); padding: 15px 30px;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+      border-left: 2px solid var(--maasai-red);
+    }
+    .headliner { background: rgba(217, 28, 28, 0.1); border-left: 4px solid var(--maasai-yellow); color: var(--maasai-yellow); }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="concert.html" class="active">Unity Concert</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="concert.html">Unity Concert</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="sponsorship.html">Sponsorship</a>
+  </div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="cinematic-text">10 Years <span class="text-red">Unity Concert</span></h1>
+      <div class="bead-divider">
+        <div class="bead blue"></div><div class="bead yellow"></div><div class="bead red"></div>
+      </div>
+      <p class="cinematic-text">Saturday, 31st October 2026</p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="event-details">
+        <div class="detail-card">
+          <h3>Date & Time</h3>
+          <p>31 Oct 2026<br><span style="font-size:1rem; font-family:var(--font-body); font-weight:300;">10:00 AM - 6:00 PM</span></p>
+        </div>
+        <div class="detail-card">
+          <h3>Venue</h3>
+          <p>Kenyatta Stadium<br><span style="font-size:1rem; font-family:var(--font-body); font-weight:300;">Maralal, Samburu</span></p>
+        </div>
+        <div class="detail-card" style="border-bottom-color: var(--maasai-red);">
+          <h3>Admission</h3>
+          <p class="text-red">FREE ENTRY<br><span style="font-size:1rem; font-family:var(--font-body); font-weight:300; color:#fff;">For Everyone</span></p>
+        </div>
+      </div>
+
+      <div class="charity-section">
+        <div class="charity-text">
+          <h2 style="margin-bottom: 30px;">Walking Together <span class="text-red">For Peace</span></h2>
+          <p style="margin-left:0; max-width:100%; text-align:justify; margin-bottom: 20px;">More than an entertainment event, the Unity Concert is a platform for peace, cultural appreciation, and youth empowerment. It brings together the Turkana and Samburu communities in a shared space for positive interaction.</p>
+          <p style="margin-left:0; max-width:100%; text-align:justify; margin-bottom: 30px;">The event will begin with a <strong>Peace Walk from Yare to Kenyatta Stadium</strong>, symbolizing the journey towards peaceful coexistence. We start together. We walk together. We arrive together. We celebrate together.</p>
+          <a href="charity-poster.jpg" target="_blank" class="btn btn-red">View Featured Initiative</a>
+        </div>
+        <div class="charity-poster">
+          <img src="charity-poster.jpg" alt="Charity & Peace Initiative Poster">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lineup-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2>The <span class="text-yellow">Lineup</span></h2>
+        <div class="bead-divider">
+          <div class="bead yellow"></div><div class="bead blue"></div><div class="bead red"></div>
+        </div>
+      </div>
+
+      <h3 style="color: var(--maasai-yellow); font-size: 1.5rem;">Host & Headliner</h3>
+      <div class="artist-list" style="margin-bottom: 50px;">
+        <div class="artist-name headliner" style="font-size:1.5rem; padding: 20px 40px;">Dufla Diligon</div>
+      </div>
+
+      <h3 style="color: var(--maasai-red); font-size: 1.5rem;">National Headliners</h3>
+      <div class="artist-list" style="margin-bottom: 50px;">
+        <div class="artist-name headliner">Arrow Bwoy</div>
+        <div class="artist-name headliner">Zero Sufuri</div>
+        <div class="artist-name headliner">Masauti</div>
+        <div class="artist-name headliner">KRG The Don</div>
+        <div class="artist-name headliner">Stevo Simpleboy</div>
+        <div class="artist-name headliner">Iyanii</div>
+      </div>
+
+      <h3 style="font-size: 1.5rem;">Regional Stars</h3>
+      <div class="artist-list">
+        <div class="artist-name">Saning'o</div>
+        <div class="artist-name">Red X Imoosh</div>
+        <div class="artist-name">Lemarti</div>
+        <div class="artist-name">Mosopal</div>
+        <div class="artist-name">Nectar Boy</div>
+        <div class="artist-name">Laiso</div>
+        <div class="artist-name">Leshao Leshao</div>
+        <div class="artist-name">Pilaz Pilonje</div>
+        <div class="artist-name">Hazun Ke</div>
+        <div class="artist-name">Ole Njapit</div>
+        <div class="artist-name">Oltwin</div>
+        <div class="artist-name">Lenarasha</div>
+        <div class="artist-name">Sifa Safi</div>
+        <div class="artist-name">DJ Queen</div>
+        <div class="artist-name">Mr Nare</div>
+        <div class="artist-name">Chriss Tetu</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="concert.html">Concert</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="sponsorship.html">Sponsorship</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dufla Diligon. All rights reserved.</p>
+        <p style="margin-top:10px;">Powered by <strong>Extra Levels Marketing</strong> | dufladiligon.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
+    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
+    h.addEventListener('click', () => { m.classList.toggle('open'); });
+  </script>
+</body>
+</html>
