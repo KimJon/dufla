@@ -1,21 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dufla Diligon | Official Website</title>
-  <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon. Music, Culture, Peace, Unity.">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    #hero { height: 100vh; background: url('DSC09022.JPG') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; text-align: center; }
-    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(14,41,84,0.4) 0%, rgba(10,10,10,0.9) 100%); }
-    .hero-content { position: relative; z-index: 2; margin-top: 50px; }
-    .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-    .home-section { padding: 120px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .home-section h2 { margin-bottom: 20px; color: var(--maasai-yellow); font-size: clamp(2rem, 4vw, 3rem); }
-  </style>
-</head>
-<body>
+$nav = @"
   <nav id="navbar">
     <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
     <ul class="nav-links">
@@ -41,6 +24,72 @@
     <a href="news.html">NEWS</a>
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
+"@
+
+$footer = @"
+  <footer>
+    <div class="container">
+      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      
+      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Dufla</a></li>
+          <li><a href="music-videos.html">Music & Videos</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><a href="10-years.html">10 Years</a></li>
+          <li><a href="support-partnerships.html">Support & Partnerships</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="book-dufla.html">Book Dufla</a></li>
+        </ul>
+        <ul style="list-style:none; text-align:left; line-height:2;">
+          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
+          <li><a href="https://tiktok.com/@dufladiligon" target="_blank">TikTok</a></li>
+          <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/dufladiligon" target="_blank">Facebook</a></li>
+          <li><a href="https://youtube.com/@dufladiligontv" target="_blank">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p style="margin-top:10px;">Website by <strong>Haxor Management & Technology Consultants</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
+    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
+    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
+  </script>
+</body>
+</html>
+"@
+
+$homepage = @"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dufla Diligon | Official Website</title>
+  <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon. Music, Culture, Peace, Unity.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #hero { height: 100vh; background: url('DSC09022.JPG') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; text-align: center; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(14,41,84,0.4) 0%, rgba(10,10,10,0.9) 100%); }
+    .hero-content { position: relative; z-index: 2; margin-top: 50px; }
+    .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+    .home-section { padding: 120px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .home-section h2 { margin-bottom: 20px; color: var(--maasai-yellow); font-size: clamp(2rem, 4vw, 3rem); }
+  </style>
+</head>
+<body>
+$nav
 
   <header id="hero">
     <div class="hero-content container">
@@ -102,44 +151,7 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
-      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
-      
-      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Dufla</a></li>
-          <li><a href="music-videos.html">Music & Videos</a></li>
-          <li><a href="events.html">Events</a></li>
-        </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><a href="10-years.html">10 Years</a></li>
-          <li><a href="support-partnerships.html">Support & Partnerships</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="book-dufla.html">Book Dufla</a></li>
-        </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
-          <li><a href="https://tiktok.com/@dufladiligon" target="_blank">TikTok</a></li>
-          <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
-          <li><a href="https://facebook.com/dufladiligon" target="_blank">Facebook</a></li>
-          <li><a href="https://youtube.com/@dufladiligontv" target="_blank">YouTube</a></li>
-        </ul>
-      </div>
+$footer
+"@
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
-        <p style="margin-top:10px;">Website by <strong>Haxor Management & Technology Consultants</strong></p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
-    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
-    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
-  </script>
-</body>
-</html>
+Set-Content index.html -Value $homepage -Encoding UTF8

@@ -69,9 +69,9 @@ p { font-size: 1rem; font-weight: 300; opacity: 0.85; max-width: 800px; margin: 
 }
 .nav-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; }
 .nav-logo span { color: var(--maasai-red); }
-.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
 .nav-links a {
-  font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
   transition: color var(--transition); position: relative;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--maasai-yellow); }
@@ -86,7 +86,7 @@ p { font-size: 1rem; font-weight: 300; opacity: 0.85; max-width: 800px; margin: 
 .hamburger span { width: 30px; height: 2px; background: var(--white); transition: var(--transition); }
 .mobile-menu {
   position: fixed; inset: 0; background: var(--earth-dark); z-index: 1000;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
   opacity: 0; pointer-events: none; transition: var(--transition);
 }
 .mobile-menu.open { opacity: 1; pointer-events: auto; }
@@ -114,7 +114,7 @@ footer {
 }
 .footer-logo { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; }
 .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap; }
-.footer-links a { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+.footer-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
 .footer-links a:hover { color: var(--maasai-yellow); }
 .footer-bottom { font-size: 0.75rem; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 40px; }
 
