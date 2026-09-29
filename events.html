@@ -4,20 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events & Performances | Dufla Diligon</title>
-  <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon.">
+  <meta name="description" content="Upcoming and past events from Dufla Diligon - Unity Charity Event and 10 Years Anniversary Unity Concert.">
   <link rel="stylesheet" href="style.css">
-  <style>.page-header { background-image: url('dufla 1.JPG'); }
-.event-list { display:flex; flex-direction:column; gap:20px; margin-top:40px; }
-.event-row { display:flex; background:rgba(255,255,255,0.03); border-left:4px solid var(--maasai-red); transition:var(--transition); overflow:hidden; }
-.event-row:hover { background:rgba(255,255,255,0.08); }
-.event-date { padding:30px; background:rgba(0,0,0,0.5); text-align:center; min-width:150px; display:flex; flex-direction:column; justify-content:center; }
-.event-date .day { font-size:2.5rem; font-family:var(--font-heading); font-weight:700; color:var(--maasai-yellow); line-height:1; }
-.event-date .month { font-size:1rem; text-transform:uppercase; letter-spacing:2px; }
-.event-details { padding:30px; flex-grow:1; display:flex; flex-direction:column; justify-content:center; }
-.event-title { font-size:1.5rem; font-weight:700; margin-bottom:5px; }
-.event-location { font-size:0.9rem; color:#aaa; margin-bottom:15px; }
-.event-cta { padding:30px; display:flex; align-items:center; }
-@media(max-width:768px) { .event-row { flex-direction:column; } .event-date { padding:20px; } .event-cta { padding:20px; justify-content:flex-start; } }</style>
+  <style>
+    .page-header { background-image: url('dufla3.JPG'); }
+
+    /* Upcoming grid */
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+    .ev-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .ev-card:hover { transform: translateY(-8px); border-color: var(--maasai-red); }
+    .ev-card .poster-wrap { position: relative; }
+    .ev-card .poster-wrap img { width: 100%; display: block; max-height: 480px; object-fit: cover; object-position: top; }
+    .ev-card .date-badge {
+      position: absolute; top: 15px; left: 15px;
+      background: var(--maasai-red); color: #fff;
+      padding: 8px 16px; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+    }
+    .ev-card .ev-body { padding: 30px; }
+    .ev-card .ev-title { font-family: var(--font-heading); font-size: 1.5rem; color: var(--white); margin-bottom: 8px; }
+    .ev-card .ev-location { color: var(--maasai-yellow); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; }
+    .ev-card .ev-desc { color: #aaa; font-size: 0.9rem; line-height: 1.7; margin-bottom: 25px; }
+
+    /* Concert card â€” uses background photo instead of poster */
+    .ev-card.concert-card .poster-wrap {
+      height: 480px;
+      background: url('dufla5.JPG') center/cover;
+      display: flex; align-items: flex-end;
+    }
+    .ev-card.concert-card .photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    .ev-card.concert-card .poster-overlay-text {
+      position: relative; z-index: 2; padding: 30px;
+    }
+    .ev-card.concert-card .date-badge { background: var(--maasai-yellow); color: #000; }
+    .ev-card.concert-card { border-color: var(--maasai-yellow); }
+
+    /* Past events */
+    .past-grid { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+    .past-row {
+      display: flex; align-items: center; gap: 0;
+      background: rgba(255,255,255,0.02);
+      border-left: 4px solid rgba(255,255,255,0.1);
+      opacity: 0.6; filter: grayscale(80%);
+      transition: opacity 0.3s;
+    }
+    .past-row:hover { opacity: 0.9; filter: grayscale(0%); }
+    .past-date { padding: 20px 25px; background: rgba(0,0,0,0.4); text-align: center; min-width: 100px; }
+    .past-date .day { font-size: 1.8rem; font-family: var(--font-heading); font-weight: 700; color: var(--maasai-yellow); line-height: 1; }
+    .past-date .mo { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+    .past-info { padding: 20px 25px; flex-grow: 1; }
+    .past-title { font-weight: 700; font-size: 1rem; }
+    .past-loc { font-size: 0.8rem; color: #888; margin-top: 4px; }
+
+    @media(max-width: 768px) {
+      .upcoming-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <nav id="navbar">
@@ -25,16 +79,15 @@
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT DUFLA</a></li>
-      <li><a href="music-videos.html" >MUSIC & VIDEOS</a></li>
+      <li><a href="music-videos.html">MUSIC & VIDEOS</a></li>
       <li><a href="events.html" class="active">EVENTS</a></li>
       <li><a href="10-years.html">10 YEARS</a></li>
       <li><a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a></li>
-      <li><a href="news.html" >NEWS</a></li>
-      <li><a href="book-dufla.html" >BOOK DUFLA</a></li>
+      <li><a href="news.html">NEWS</a></li>
+      <li><a href="book-dufla.html">BOOK DUFLA</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT DUFLA</a>
@@ -45,77 +98,83 @@
     <a href="news.html">NEWS</a>
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
+
   <header class="page-header">
     <div class="container">
       <h1 class="cinematic-text">LIVE <span class="text-red">EVENTS</span></h1>
       <div class="bead-divider"><div class="bead red"></div><div class="bead yellow"></div><div class="bead red"></div></div>
-      <p class="cinematic-text" style="font-size:1.2rem; margin-top:10px;">Catch Dufla Diligon live on stage.</p>
+      <p class="cinematic-text" style="font-size:1.1rem; margin-top:10px; letter-spacing:3px;">CATCH DUFLA DILIGON LIVE</p>
     </div>
   </header>
-  <section class="section container">
-    <h2 style="color:var(--maasai-yellow); margin-bottom: 20px;">UPCOMING EVENTS</h2>
-    
-    <div class="event-list" style="margin-bottom: 80px;">
-          <div class="event-list" style="margin-bottom: 40px;">
-      <!-- Charity Event -->
-      <div class="event-row" style="border-left-color: var(--maasai-red);">
-        <div class="event-date">
-          <div class="day">24</div>
-          <div class="month">OCT 2026</div>
-        </div>
-        <div class="event-details">
-          <div class="event-title">Unity Charity Event: Dufla Diligon & Friends</div>
-          <div class="event-location">Mary Immaculate Girl Child Rescue Center, Suguta (Maralal)</div>
-          <div style="font-size:0.8rem; color:#888;">Nurturing Children, Building Brighter Futures. Collecting foodstuffs, soaps, toiletries, and cash donations.</div>
-        </div>
-        <div class="event-cta">
-          <a href="charity-poster-new.jpg" target="_blank" class="btn btn-red">VIEW POSTER</a>
-        </div>
-      </div>
-    </div>
-      <!-- Main Event -->
-      <div class="event-row" style="border-left-color: var(--maasai-yellow);">
-        <div class="event-date">
-          <div class="day">31</div>
-          <div class="month">OCT 2026</div>
-        </div>
-        <div class="event-details">
-          <div class="event-title">10 Years Anniversary Unity Concert</div>
-          <div class="event-location">Maralal, Samburu County</div>
-          <div style="font-size:0.8rem; color:#888;">Music. Culture. Peace. Unity. Free Entry for everyone.</div>
-        </div>
-        <div class="event-cta">
-          <a href="10-years.html" class="btn btn-red">EVENT DETAILS</a>
-        </div>
-      </div>
-    </div>
 
-    <h2 style="color:#888; margin-bottom: 20px;">PAST EVENTS ARCHIVE</h2>
-    <div class="event-list">
-      <div class="event-row" style="opacity: 0.7; filter: grayscale(100%);">
-        <div class="event-date"><div class="day">15</div><div class="month">AUG 2025</div></div>
-        <div class="event-details">
-          <div class="event-title">Nairobi Cultural Festival</div>
-          <div class="event-location">KICC, Nairobi</div>
+  <section class="section container">
+    <h2 style="color:var(--maasai-yellow); font-size:clamp(1.8rem,3vw,2.5rem); margin-bottom:5px;">UPCOMING EVENTS</h2>
+    <p style="color:#888; letter-spacing:2px; font-size:0.85rem; text-transform:uppercase;">October 2026</p>
+
+    <div class="upcoming-grid">
+
+      <!-- Charity Event Card -->
+      <div class="ev-card">
+        <div class="poster-wrap">
+          <img src="charity-poster-new.jpg" alt="Unity Charity Event Poster">
+          <div class="date-badge">24 OCT 2026</div>
         </div>
-        <div class="event-cta"><a href="#" class="btn btn-outline" style="padding:10px 20px;">VIEW RECAP</a></div>
+        <div class="ev-body">
+          <h3 class="ev-title">Unity Charity Event</h3>
+          <p class="ev-location">Dufla Diligon & Friends &bull; Maralal</p>
+          <p class="ev-desc">A powerful community initiative supporting the <strong style="color:#fff;">Mary Immaculate Girl Child Rescue Center, Suguta</strong>. Nurturing children and building brighter futures through music and collective giving.</p>
+          <p style="color:#ccc; font-size:0.9rem; margin-bottom:10px;"><strong style="color:var(--maasai-yellow);">We are collecting:</strong> Foodstuffs, Soaps, Toiletries &amp; Cash Donations</p>
+          <p style="color:#888; font-size:0.85rem; margin-bottom:25px;">Drop off at Extra Levels Office, The Arcade &mdash; Maralal</p>
+          <div style="display:flex; gap:15px; flex-wrap:wrap; align-items:center;">
+            <a href="charity-poster-new.jpg" target="_blank" class="btn btn-red" style="font-size:0.8rem; padding:12px 22px;">VIEW POSTER</a>
+            <a href="https://wa.me/254799304205" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:12px 22px;">ENQUIRE VIA WHATSAPP</a>
+          </div>
+        </div>
       </div>
-      <div class="event-row" style="opacity: 0.7; filter: grayscale(100%);">
-        <div class="event-date"><div class="day">02</div><div class="month">MAY 2025</div></div>
-        <div class="event-details">
-          <div class="event-title">East African Connect Tour</div>
-          <div class="event-location">Kampala, Uganda</div>
+
+      <!-- 10 Years Concert Card -->
+      <div class="ev-card concert-card">
+        <div class="poster-wrap">
+          <div class="photo-overlay"></div>
+          <div class="date-badge">31 OCT 2026</div>
+          <div class="poster-overlay-text">
+            <p style="color:var(--maasai-yellow); font-size:0.8rem; letter-spacing:2px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">FREE ENTRY FOR EVERYONE</p>
+            <h3 style="font-family:var(--font-heading); font-size:1.8rem; color:#fff; margin-bottom:5px;">10 Years Anniversary<br>Unity Concert</h3>
+            <p style="color:#ccc; font-size:0.9rem;">Music. Culture. Peace. Unity.</p>
+          </div>
         </div>
-        <div class="event-cta"><a href="#" class="btn btn-outline" style="padding:10px 20px;">VIEW RECAP</a></div>
+        <div class="ev-body">
+          <p class="ev-location">Maralal, Samburu County</p>
+          <p class="ev-desc">A landmark celebration of a decade of music, creativity and community. Bringing together Turkana, Samburu communities and the general public for a day of performance, culture and unity.</p>
+          <p style="color:#aaa; font-size:0.85rem; margin-bottom:25px;"><strong style="color:#fff;">10:00 AM â€“ 6:00 PM</strong> &bull; Peace Walk &bull; Live Performances &bull; Regional Artists &bull; National Artists</p>
+          <a href="10-years.html" class="btn btn-outline" style="font-size:0.8rem; padding:12px 22px;">FULL EVENT DETAILS &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Past Events -->
+  <section class="section container">
+    <h2 style="color:#888; font-size:clamp(1.5rem,2.5vw,2rem); margin-bottom:5px;">PAST EVENTS</h2>
+    <p style="color:#555; letter-spacing:2px; font-size:0.8rem; text-transform:uppercase; margin-bottom:30px;">Archive</p>
+    <div class="past-grid">
+      <div class="past-row">
+        <div class="past-date"><div class="day">15</div><div class="mo">Aug 2025</div></div>
+        <div class="past-info"><div class="past-title">Nairobi Cultural Festival</div><div class="past-loc">KICC, Nairobi</div></div>
+      </div>
+      <div class="past-row">
+        <div class="past-date"><div class="day">02</div><div class="mo">May 2025</div></div>
+        <div class="past-info"><div class="past-title">East African Connect Tour</div><div class="past-loc">Kampala, Uganda</div></div>
       </div>
     </div>
   </section>
+
   <footer>
     <div class="container">
       <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
-      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
-      
-      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-bottom:40px;">
         <ul style="list-style:none; text-align:left; line-height:2;">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Dufla</a></li>
@@ -136,14 +195,12 @@
           <li><a href="https://youtube.com/@duflamusic?si=NporpgNPWeEd60oz" target="_blank">YouTube</a></li>
         </ul>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2026 Dufla Diligon. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
         <p style="margin-top:10px;">Powered by <strong>Extra Levels Marketing</strong></p>
       </div>
     </div>
   </footer>
-
   <script>
     window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
     const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
@@ -151,9 +208,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
