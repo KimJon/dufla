@@ -7,8 +7,37 @@
   <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon. Music, Culture, Peace, Unity.">
   <link rel="stylesheet" href="style.css">
   <style>
-    #hero { height: 100vh; background: url('dufla 1.JPG') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; text-align: center; }
-    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(14,41,84,0.4) 0%, rgba(10,10,10,0.9) 100%); }
+        /* Slideshow Hero */
+    #hero { 
+      height: 100vh; position: relative; display: flex; flex-direction: column; 
+      justify-content: center; align-items: center; text-align: center; overflow: hidden;
+    }
+    .hero-slideshow {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-slideshow div {
+      position: absolute; inset: 0; background-size: cover; background-position: center top;
+      opacity: 0; animation: slideShow 24s infinite;
+    }
+    /* Adjusted gradient: less dark in the middle to make images more visible, fading to dark at bottom edges */
+    #hero::before { 
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: radial-gradient(circle at center, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.85) 100%),
+                  linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 50%, var(--earth-dark) 100%);
+    }
+    
+    .hero-slideshow div:nth-child(1) { background-image: url('dufla 1.JPG'); animation-delay: 0s; }
+    .hero-slideshow div:nth-child(2) { background-image: url('dufla2.JPG'); animation-delay: 6s; }
+    .hero-slideshow div:nth-child(3) { background-image: url('dufla3.JPG'); animation-delay: 12s; }
+    .hero-slideshow div:nth-child(4) { background-image: url('dufla5.JPG'); animation-delay: 18s; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; transform: scale(1.05); }
+      10% { opacity: 1; transform: scale(1); }
+      25% { opacity: 1; transform: scale(1); }
+      35% { opacity: 0; transform: scale(1.05); }
+      100% { opacity: 0; }
+    }
     .hero-content { position: relative; z-index: 2; margin-top: 50px; }
     .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
     .home-section { padding: 120px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -42,7 +71,10 @@
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
 
-  <header id="hero">
+    <header id="hero">
+    <div class="hero-slideshow">
+      <div></div><div></div><div></div><div></div>
+    </div>
     <div class="hero-content container">
       <div style="font-size: 1rem; letter-spacing: 6px; color: var(--maasai-yellow); font-weight: 600; margin-bottom: 10px;">MUSIC. CULTURE. PEACE. UNITY.</div>
       <h1 class="cinematic-text" style="font-size:clamp(4rem, 10vw, 8rem);">DUFLA<br><span class="text-red">DILIGON</span></h1>
@@ -55,9 +87,9 @@
       </div>
     </div>
     <div style="background:var(--maasai-red); padding:15px; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--white); box-shadow:0 5px 15px rgba(0,0,0,0.5); z-index:10;">
-    <span>â˜… Citizen Digital Song of the Year 2025</span>
-    <span>â˜… 10+ Years in Music</span>
-    <span>â˜… Northern Kenya's Global Voice</span>
+    <span>&#9733; Citizen Digital Song of the Year 2025</span>
+    <span>&#9733; 10+ Years in Music</span>
+    <span>&#9733; Northern Kenya's Global Voice</span>
   </div>
 </header>
 
@@ -146,6 +178,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
