@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <meta name="description" content="Official digital home of Kenyan recording and performing artist Dufla Diligon. Music, Culture, Peace, Unity.">
   <link rel="stylesheet" href="style.css">
   <style>
-        /* Slideshow Hero */
+    /* Slideshow Hero */
     #hero { 
       height: 100vh; position: relative; display: flex; flex-direction: column; 
       justify-content: center; align-items: center; text-align: center; overflow: hidden;
@@ -16,14 +16,16 @@
       position: absolute; inset: 0; z-index: 0;
     }
     .hero-slideshow div {
-      position: absolute; inset: 0; background-size: cover; background-position: center top;
+      position: absolute; inset: 0; background-size: cover; background-position: center center;
       opacity: 0; animation: slideShow 24s infinite;
     }
-    /* Adjusted gradient: less dark in the middle to make images more visible, fading to dark at bottom edges */
+    /* Very light overlay — images are the star, text still readable via text-shadow */
     #hero::before { 
       content: ''; position: absolute; inset: 0; z-index: 1;
-      background: radial-gradient(circle at center, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.85) 100%),
-                  linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 50%, var(--earth-dark) 100%);
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.10) 40%,
+        rgba(0,0,0,0.55) 100%);
     }
     
     .hero-slideshow div:nth-child(1) { background-image: url('dufla 1.JPG'); animation-delay: 0s; }
@@ -32,16 +34,123 @@
     .hero-slideshow div:nth-child(4) { background-image: url('dufla5.JPG'); animation-delay: 18s; }
 
     @keyframes slideShow {
-      0% { opacity: 0; transform: scale(1.05); }
-      10% { opacity: 1; transform: scale(1); }
-      25% { opacity: 1; transform: scale(1); }
-      35% { opacity: 0; transform: scale(1.05); }
+      0%   { opacity: 0; transform: scale(1.04); }
+      8%   { opacity: 1; transform: scale(1); }
+      28%  { opacity: 1; transform: scale(1); }
+      38%  { opacity: 0; transform: scale(1.04); }
       100% { opacity: 0; }
     }
+    /* Strong text-shadow so copy remains legible over bright images */
     .hero-content { position: relative; z-index: 2; margin-top: 50px; }
+    .hero-content h1, .hero-content p, .hero-content div {
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9);
+    }
     .hero-buttons { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
     .home-section { padding: 120px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .home-section h2 { margin-bottom: 20px; color: var(--maasai-yellow); font-size: clamp(2rem, 4vw, 3rem); }
+
+    /* Mobile hero */
+    @media(max-width:768px){
+      .hero-content h1 { font-size: 3.5rem !important; }
+      .hero-content p  { font-size: 1rem !important; }
+      .hero-buttons    { flex-direction: column; width:90%; margin-left:auto; margin-right:auto; }
+      .hero-buttons .btn { width:100%; }
+    }
+
+    /* ── SOCIAL PROOF SECTION ── */
+    .social-proof-section {
+      padding: 100px 0;
+      background: #0e0e0e;
+    }
+    .social-proof-section h2 {
+      text-align: center;
+      font-size: clamp(1.8rem,3.5vw,2.8rem);
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .social-proof-section .sub-label {
+      text-align: center;
+      color: var(--maasai-yellow);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+    .proof-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .proof-left {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 6px;
+    }
+    .proof-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: brightness(0.88);
+    }
+    .proof-left img:hover { transform: scale(1.03); filter: brightness(1); }
+    .proof-left .big-img {
+      grid-column: 1 / -1;
+      height: 340px;
+    }
+    .proof-left .small-img { height: 220px; }
+    .proof-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 50px;
+      background: var(--maasai-blue);
+      border-left: 4px solid var(--maasai-red);
+    }
+    .proof-right .quote {
+      font-size: clamp(1.1rem,2vw,1.5rem);
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .proof-right .quote::before { content: '\201C'; color: var(--maasai-red); font-size: 3rem; line-height: 0; vertical-align: -0.5em; margin-right: 6px; }
+    .proof-right .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .proof-right .stat-box {
+      border-top: 2px solid var(--maasai-red);
+      padding-top: 15px;
+    }
+    .proof-right .stat-num {
+      font-size: 2rem;
+      font-family: var(--font-heading);
+      font-weight: 900;
+      color: var(--maasai-yellow);
+      line-height: 1;
+    }
+    .proof-right .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+    @media(max-width:900px){
+      .proof-layout { grid-template-columns: 1fr; }
+      .proof-right  { padding: 40px 30px; border-left: none; border-top: 4px solid var(--maasai-red); }
+      .proof-left .big-img { height: 240px; }
+      .proof-left .small-img { height: 160px; }
+    }
   </style>
 </head>
 <body>
@@ -95,6 +204,46 @@
       <div class="bead-divider"><div class="bead red"></div><div class="bead yellow"></div><div class="bead blue"></div></div>
       <p style="font-size: 1.2rem; max-width:800px; margin:0 auto;">Born and raised in Baragoi, Samburu County, Dufla Diligon's artistic journey is deeply connected to the culture, people and experiences of Northern Kenya. From his early life herding livestock to more than a decade of music, performance and collaboration, his journey has grown from local roots into a wider regional platform.</p>
       <div style="margin-top:40px;"><a href="about.html" class="btn btn-outline">READ DUFLA'S STORY &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ── SOCIAL PROOF: DUFLA IN ACTION ── -->
+  <section class="social-proof-section">
+    <h2>THE ARTIST IN <span class="text-red">ACTION</span></h2>
+    <p class="sub-label">10 Years &bull; Northern Kenya &bull; Regional Stage</p>
+    <div class="proof-layout">
+      <!-- Photo grid -->
+      <div class="proof-left">
+        <img class="big-img" src="dufla 1.JPG" alt="Dufla Diligon performing live" loading="lazy">
+        <img class="small-img" src="dufla4.JPG" alt="Dufla Diligon on stage" loading="lazy">
+        <img class="small-img" src="dufla6.JPG" alt="Dufla Diligon at event" loading="lazy">
+      </div>
+      <!-- Info panel -->
+      <div class="proof-right">
+        <p class="quote">Music is not just what I do. It is who I am, where I come from, and what my community deserves to see on the regional stage.</p>
+        <div class="stats">
+          <div class="stat-box">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years in Music</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">2026</div>
+            <div class="stat-label">Anniversary Concert</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Collaborations</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">FREE</div>
+            <div class="stat-label">Entry for Everyone</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:15px; flex-wrap:wrap;">
+          <a href="about.html" class="btn btn-red">ABOUT DUFLA &rarr;</a>
+          <a href="music-videos.html" class="btn btn-outline">WATCH VIDEOS &rarr;</a>
+        </div>
+      </div>
     </div>
   </section>
 
