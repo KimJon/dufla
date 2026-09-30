@@ -21,30 +21,52 @@
 .filters { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom: 50px; }
 .filter-btn { background:transparent; border:1px solid var(--white); color:var(--white); padding:10px 20px; cursor:pointer; font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; transition:var(--transition); }
 .filter-btn:hover, .filter-btn.active { background:var(--maasai-red); border-color:var(--maasai-red); }</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Dufla Diligon",
+  "url": "https://dufladiligon.com",
+  "image": "https://dufladiligon.com/dufla%201.JPG",
+  "sameAs": [
+    "https://www.facebook.com/share/1Dr2cRrCRw/",
+    "https://instagram.com/dufladiligon",
+    "https://youtube.com/@duflamusic?si=NporpgNPWeEd60oz",
+    "https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk"
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
-  <nav id="navbar">
+    <nav id="navbar">
     <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT DUFLA</a></li>
-      <li><a href="music-videos.html" class="active">MUSIC & VIDEOS</a></li>
-      <li><a href="events.html" >EVENTS</a></li>
+      <li><a href="music-videos.html">MUSIC & VIDEOS</a></li>
+      <li><a href="events.html">NEWS & EVENTS</a></li>
       <li><a href="10-years.html">10 YEARS</a></li>
       <li><a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a></li>
-      <li><a href="book-dufla.html" >BOOK DUFLA</a></li>
+      <li><a href="book-dufla.html">BOOK DUFLA</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT DUFLA</a>
     <a href="music-videos.html">MUSIC & VIDEOS</a>
-    <a href="events.html">EVENTS</a>
+    <a href="events.html">NEWS & EVENTS</a>
     <a href="10-years.html">10 YEARS</a>
     <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
-    <a href="events.html">NEWS & EVENTS</a>
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
   <header class="page-header">
@@ -141,25 +163,25 @@
     </div>
 
   </section>
-  <footer>
+    <footer>
     <div class="container">
       <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
-      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
       
-      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
-        <ul style="list-style:none; text-align:left; line-height:2;">
+      <div class="footer-grid">
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Dufla</a></li>
           <li><a href="music-videos.html">Music & Videos</a></li>
-          <li><a href="events.html">NEWS & EVENTS</a></li>
+          <li><a href="events.html">News & Events</a></li>
         </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
+        <ul class="footer-links">
           <li><a href="10-years.html">10 Years</a></li>
           <li><a href="support-partnerships.html">Support & Partnerships</a></li>
           <li><a href="book-dufla.html">Book Dufla</a></li>
         </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
+        <ul class="footer-links">
+          <li class="footer-title">Follow Dufla Diligon</li>
           <li><a href="https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk" target="_blank">TikTok</a></li>
           <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
           <li><a href="https://www.facebook.com/share/1Dr2cRrCRw/" target="_blank">Facebook</a></li>
@@ -173,14 +195,24 @@
       </div>
     </div>
   </footer>
-
   <script>
-    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
-    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
-    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    if(h && m) { 
+      h.addEventListener('click', () => { 
+        h.classList.toggle('active');
+        m.classList.toggle('open'); 
+      }); 
+    }
   </script>
 </body>
 </html>
+
 
 
 

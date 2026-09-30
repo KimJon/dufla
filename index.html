@@ -152,12 +152,36 @@
       .proof-left .small-img { height: 160px; }
     }
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Dufla Diligon",
+  "url": "https://dufladiligon.com",
+  "image": "https://dufladiligon.com/dufla%201.JPG",
+  "sameAs": [
+    "https://www.facebook.com/share/1Dr2cRrCRw/",
+    "https://instagram.com/dufladiligon",
+    "https://youtube.com/@duflamusic?si=NporpgNPWeEd60oz",
+    "https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk"
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
-  <nav id="navbar">
+    <nav id="navbar">
     <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="index.html">HOME</a></li>
       <li><a href="about.html">ABOUT DUFLA</a></li>
       <li><a href="music-videos.html">MUSIC & VIDEOS</a></li>
       <li><a href="events.html">NEWS & EVENTS</a></li>
@@ -167,15 +191,13 @@
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
-
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">HOME</a>
     <a href="about.html">ABOUT DUFLA</a>
     <a href="music-videos.html">MUSIC & VIDEOS</a>
-    <a href="events.html">EVENTS</a>
+    <a href="events.html">NEWS & EVENTS</a>
     <a href="10-years.html">10 YEARS</a>
     <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
-    <a href="events.html">NEWS & EVENTS</a>
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
 
@@ -246,18 +268,92 @@
     </div>
   </section>
 
-  <section class="home-section" style="background: var(--maasai-blue); text-align: center;">
+      <section class="home-section" style="background: var(--maasai-blue); text-align: center;">
     <div class="container">
       <h2 style="color:var(--white);">MUSIC & VIDEOS</h2>
       <p style="margin-bottom: 40px; color:var(--maasai-yellow);">Listen, watch and explore Dufla Diligon's musical journey.</p>
-            <div style="aspect-ratio:16/9; max-width:800px; margin:0 auto 40px; border: 2px solid var(--maasai-red); box-shadow:0 15px 30px rgba(0,0,0,0.5);">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bd77wL5r-Ck" title="Iyanii ft Dufla Diligon - Donjo Maber (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      <div class="home-video-slider" style="position:relative; max-width:800px; margin:0 auto 40px; border:2px solid var(--maasai-red); box-shadow:0 15px 30px rgba(0,0,0,0.5); overflow:hidden; aspect-ratio:16/9; background:#000;">
+        <div class="hv-track" id="hvTrack" style="display:flex; transition:transform 0.5s ease-in-out; width:100%; height:100%;">
+          
+          <div class="hv-slide" style="flex:0 0 100%; width:100%; height:100%; position:relative;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bd77wL5r-Ck" title="Donjo Maber" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          
+          <div class="hv-slide" style="flex:0 0 100%; width:100%; height:100%; position:relative;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UvXZw2tWkhQ" title="Rumours" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          
+          <div class="hv-slide" style="flex:0 0 100%; width:100%; height:100%; position:relative;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NTYtms36H9M" title="Etingli" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          
+          <div class="hv-slide" style="flex:0 0 100%; width:100%; height:100%; position:relative;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gvsjDf3jH50" title="Achamoyong" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          
+        </div>
+
+        <button id="hvPrev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:rgba(0,0,0,0.7); border:1px solid var(--maasai-red); color:#fff; width:40px; height:40px; cursor:pointer; font-size:1.2rem; z-index:10;">&#8592;</button>
+        <button id="hvNext" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:rgba(0,0,0,0.7); border:1px solid var(--maasai-red); color:#fff; width:40px; height:40px; cursor:pointer; font-size:1.2rem; z-index:10;">&#8594;</button>
       </div>
+      
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom:40px;" id="hvDots">
+        <div class="hv-dot active" data-idx="0" style="width:12px; height:12px; background:var(--maasai-red); border-radius:50%; cursor:pointer; transition:0.3s;"></div>
+        <div class="hv-dot" data-idx="1" style="width:12px; height:12px; background:rgba(255,255,255,0.3); border-radius:50%; cursor:pointer; transition:0.3s;"></div>
+        <div class="hv-dot" data-idx="2" style="width:12px; height:12px; background:rgba(255,255,255,0.3); border-radius:50%; cursor:pointer; transition:0.3s;"></div>
+        <div class="hv-dot" data-idx="3" style="width:12px; height:12px; background:rgba(255,255,255,0.3); border-radius:50%; cursor:pointer; transition:0.3s;"></div>
+      </div>
+
       <div class="hero-buttons">
-        <a href="music-videos.html" class="btn btn-outline">EXPLORE MUSIC & VIDEOS &rarr;</a>
+        <a href="music-videos.html" class="btn btn-outline">EXPLORE ALL MUSIC & VIDEOS &rarr;</a>
       </div>
     </div>
   </section>
+
+  <script>
+    (function(){
+      let current = 0;
+      const total = 4;
+      const track = document.getElementById('hvTrack');
+      const dots = document.querySelectorAll('.hv-dot');
+      
+      function updateSlider(idx) {
+        current = (idx + total) % total;
+        if(track) track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(d => { d.style.background = 'rgba(255,255,255,0.3)'; d.style.transform = 'scale(1)'; });
+        if(dots[current]) { dots[current].style.background = 'var(--maasai-red)'; dots[current].style.transform = 'scale(1.2)'; }
+      }
+      
+      const nextBtn = document.getElementById('hvNext');
+      const prevBtn = document.getElementById('hvPrev');
+      if(nextBtn) nextBtn.addEventListener('click', () => updateSlider(current + 1));
+      if(prevBtn) prevBtn.addEventListener('click', () => updateSlider(current - 1));
+      dots.forEach(d => d.addEventListener('click', () => updateSlider(parseInt(d.getAttribute('data-idx')))));
+    })();
+  </script>
+
+  <script>
+    (function(){
+      let current = 0;
+      const total = 4;
+      const track = document.getElementById('hvTrack');
+      const dots = document.querySelectorAll('.hv-dot');
+      
+      function updateSlider(idx) {
+        current = (idx + total) % total;
+        if(track) track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(d => { d.style.background = 'rgba(255,255,255,0.3)'; d.style.transform = 'scale(1)'; });
+        if(dots[current]) { dots[current].style.background = 'var(--maasai-red)'; dots[current].style.transform = 'scale(1.2)'; }
+      }
+      
+      const nextBtn = document.getElementById('hvNext');
+      const prevBtn = document.getElementById('hvPrev');
+      if(nextBtn) nextBtn.addEventListener('click', () => updateSlider(current + 1));
+      if(prevBtn) prevBtn.addEventListener('click', () => updateSlider(current - 1));
+      dots.forEach(d => d.addEventListener('click', () => updateSlider(parseInt(d.getAttribute('data-idx')))));
+    })();
+  </script>
 
   <section class="home-section" style="background: url('dufla3.JPG') center/cover fixed; position:relative; text-align: center;">
     <div style="position:absolute; inset:0; background:rgba(10,10,10,0.85);"></div>
@@ -333,25 +429,25 @@
     </div>
   </section>
 
-  <footer>
+    <footer>
     <div class="container">
       <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
-      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom: 40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
+      <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
       
-      <div style="display:flex; justify-content:center; gap: 40px; flex-wrap:wrap; margin-bottom: 40px;">
-        <ul style="list-style:none; text-align:left; line-height:2;">
+      <div class="footer-grid">
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Dufla</a></li>
           <li><a href="music-videos.html">Music & Videos</a></li>
-          <li><a href="events.html">NEWS & EVENTS</a></li>
+          <li><a href="events.html">News & Events</a></li>
         </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
+        <ul class="footer-links">
           <li><a href="10-years.html">10 Years</a></li>
           <li><a href="support-partnerships.html">Support & Partnerships</a></li>
           <li><a href="book-dufla.html">Book Dufla</a></li>
         </ul>
-        <ul style="list-style:none; text-align:left; line-height:2;">
-          <li><strong style="color:#fff;">Follow Dufla Diligon</strong></li>
+        <ul class="footer-links">
+          <li class="footer-title">Follow Dufla Diligon</li>
           <li><a href="https://www.tiktok.com/@dufladiligon?_r=1&_t=ZS-9A8BRUnoHFk" target="_blank">TikTok</a></li>
           <li><a href="https://instagram.com/dufladiligon" target="_blank">Instagram</a></li>
           <li><a href="https://www.facebook.com/share/1Dr2cRrCRw/" target="_blank">Facebook</a></li>
@@ -365,14 +461,26 @@
       </div>
     </div>
   </footer>
-
   <script>
-    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50));
-    const h = document.getElementById('hamburger'), m = document.getElementById('mobileMenu');
-    if(h && m) { h.addEventListener('click', () => { m.classList.toggle('open'); }); }
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    if(h && m) { 
+      h.addEventListener('click', () => { 
+        h.classList.toggle('active');
+        m.classList.toggle('open'); 
+      }); 
+    }
   </script>
 </body>
 </html>
+
+
+
 
 
 

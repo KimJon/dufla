@@ -1,43 +1,17 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Dufla Diligon</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .page-header { background-image: url('dufla 1.JPG'); }
-    
-    .gallery-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 15px; margin-top: 40px;
-    }
-    .gallery-item {
-      position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer;
-    }
-    .gallery-item img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition);
-    }
-    .gallery-item::after {
-      content: ''; position: absolute; inset: 0; 
-      background: rgba(14, 41, 84, 0.4); opacity: 0; transition: opacity var(--transition);
-    }
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:hover::after { opacity: 1; }
+$htmlFiles = Get-ChildItem -Filter *.html
 
-    /* Lightbox */
-    .lightbox {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95);
-      z-index: 2000; align-items: center; justify-content: center;
-    }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; border: 2px solid var(--maasai-yellow); }
-    .lightbox-close {
-      position: absolute; top: 30px; right: 40px; font-size: 2rem; color: #fff;
-      cursor: pointer; font-family: var(--font-heading);
-    }
-  </style>
+$ga4 = @"
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+"@
 
+$schemaOrg = @"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,18 +27,10 @@
   ]
 }
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-</head>
-<body>
+"@
 
-      <nav id="navbar">
+$navHtml = @"
+  <nav id="navbar">
     <a href="index.html" class="nav-logo">DUFLA<span>DILIGON</span></a>
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
@@ -86,31 +52,10 @@
     <a href="support-partnerships.html">SUPPORT & PARTNERSHIPS</a>
     <a href="book-dufla.html">BOOK DUFLA</a>
   </div>
+"@
 
-  <header class="page-header">
-    <div class="container">
-      <h1 class="cinematic-text">The <span class="text-yellow">Gallery</span></h1>
-      <div class="bead-divider">
-        <div class="bead yellow"></div><div class="bead red"></div><div class="bead blue"></div>
-      </div>
-      <p class="cinematic-text">Visuals from the Journey</p>
-    </div>
-  </header>
-
-  <section class="section">
-    <div class="container">
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- JS will populate this with DSC images to save space in HTML -->
-      </div>
-    </div>
-  </section>
-
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightboxClose">X</span>
-    <img src="" id="lightboxImg" alt="Gallery Image">
-  </div>
-
-      <footer>
+$footerHtml = @"
+  <footer>
     <div class="container">
       <div class="footer-logo">DUFLA<span class="text-red">DILIGON</span></div>
       <p style="color:var(--maasai-yellow); letter-spacing:2px; font-weight:600; font-size:0.9rem; margin-bottom:40px; text-transform:uppercase;">Music. Culture. Peace. Unity.</p>
@@ -159,12 +104,23 @@
   </script>
 </body>
 </html>
+"@
 
+foreach ($file in $htmlFiles) {
+    $c = Get-Content $file.FullName -Raw
 
+    # Replace Nav
+    $c = $c -replace '(?s)<nav id="navbar">.*?</nav>\s*<div class="mobile-menu" id="mobileMenu">.*?</div>', $navHtml
+    
+    # Replace Footer
+    $c = $c -replace '(?s)<footer>.*?</html>', $footerHtml
+    
+    # Inject SEO Schema & GA4 before </head>
+    if ($c -notmatch 'application/ld\+json') {
+        $c = $c -replace '</head>', "`n$schemaOrg`n$ga4`n</head>"
+    }
 
+    Set-Content $file.FullName -Value $c -Encoding UTF8
+}
 
-
-
-
-
-
+Write-Host "Global HTML consistency applied!"
