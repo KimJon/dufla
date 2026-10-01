@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+$html = @"
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -179,3 +180,7 @@
   </script>
 </body>
 </html>
+"@
+
+Set-Content music-videos.html -Value $html -Encoding UTF8
+Write-Host "music-videos.html rewritten!"

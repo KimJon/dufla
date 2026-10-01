@@ -57,7 +57,7 @@ p { font-size: 1rem; font-weight: 300; opacity: 0.85; max-width: 800px; margin: 
 
 /* ===================== NAV ===================== */
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1010;
   padding: 24px 48px;
   display: flex; justify-content: space-between; align-items: center;
   transition: all var(--transition);
@@ -85,7 +85,7 @@ p { font-size: 1rem; font-weight: 300; opacity: 0.85; max-width: 800px; margin: 
 .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
 .hamburger span { width: 30px; height: 2px; background: var(--white); transition: var(--transition); }
 .mobile-menu {
-  position: fixed; inset: 0; background: var(--earth-dark); z-index: 1000;
+  position: fixed; inset: 0; background: var(--earth-dark); z-index: 1010;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
   opacity: 0; pointer-events: none; transition: var(--transition);
 }
@@ -196,3 +196,4 @@ footer {
   .ev-card .poster-wrap img { max-height: 250px !important; }
   .ev-card.concert-card .poster-wrap { height: 250px !important; }
 }
+
